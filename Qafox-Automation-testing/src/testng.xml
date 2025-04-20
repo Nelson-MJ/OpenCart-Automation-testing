@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="AutomationSuite" parallel="false">
+    <listeners>
+        <listener class-name="base.TestLogger"/>
+    </listeners>
+
+    <test name="ECommerceTests">
+        <classes>
+            <class name="tests.TestRegister"/>
+            <class name="tests.TestLogin"/>
+            <class name="tests.testAppleCinema"/>
+            <class name="tests.testGiftCertificate"/>
+            <class name="tests.testProductCompare"/>
+            <class name="tests.testSearchOrder"/>
+        </classes>
+
+    </test>
+    <listeners>
+        <listener class-name="base.TestListener" />
+    </listeners>
+</suite>

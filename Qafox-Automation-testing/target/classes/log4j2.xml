@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <!-- Console Appender for all tests -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+
+        <!-- Individual File Appenders for each test class -->
+        <RollingFile name="TestSearchOrderLog"
+                     fileName="logs/testSearchOrder.log"
+                     filePattern="logs/testSearchOrder-%d{yyyy-MM-dd}.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5level - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="TestGiftCertificateLog"
+                     fileName="logs/testGiftCertificate.log"
+                     filePattern="logs/testGiftCertificate-%d{yyyy-MM-dd}.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5level - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="TestProductCompareLog"
+                     fileName="logs/testProductCompare.log"
+                     filePattern="logs/testProductCompare-%d{yyyy-MM-dd}.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5level - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="TestLoginLog"
+                     fileName="logs/TestLogin.log"
+                     filePattern="logs/TestLogin-%d{yyyy-MM-dd}.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5level - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="TestAppleCinemaLog"
+                     fileName="logs/testAppleCinema.log"
+                     filePattern="logs/testAppleCinema-%d{yyyy-MM-dd}.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5level - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="TestRegisterLog"
+                     fileName="logs/TestRegister.log"
+                     filePattern="logs/TestRegister-%d{yyyy-MM-dd}.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5level - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <!-- Assign appenders to each test class -->
+        <Logger name="tests.testSearchOrder" level="info" additivity="false">
+            <AppenderRef ref="TestSearchOrderLog"/>
+            <AppenderRef ref="Console"/>
+        </Logger>
+
+        <Logger name="tests.testGiftCertificate" level="info" additivity="false">
+            <AppenderRef ref="TestGiftCertificateLog"/>
+            <AppenderRef ref="Console"/>
+        </Logger>
+
+        <Logger name="tests.testProductCompare" level="info" additivity="false">
+            <AppenderRef ref="TestProductCompareLog"/>
+            <AppenderRef ref="Console"/>
+        </Logger>
+
+        <Logger name="tests.TestLogin" level="info" additivity="false">
+            <AppenderRef ref="TestLoginLog"/>
+            <AppenderRef ref="Console"/>
+        </Logger>
+
+        <Logger name="tests.testAppleCinema" level="info" additivity="false">
+            <AppenderRef ref="TestAppleCinemaLog"/>
+            <AppenderRef ref="Console"/>
+        </Logger>
+
+        <Logger name="tests.TestRegister" level="info" additivity="false">
+            <AppenderRef ref="TestRegisterLog"/>
+            <AppenderRef ref="Console"/>
+        </Logger>
+
+        <!-- Root logger for everything else -->
+        <Root level="error">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>
