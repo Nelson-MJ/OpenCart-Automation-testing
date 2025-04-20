@@ -1,4 +1,4 @@
-# Qafox-Automation-testing
+# OpenCart-Automation-testing
 
 This project is an end-to-end UI Automation Framework for the OpenCart eCommerce application. It is built using Java, Selenium WebDriver, TestNG, and follows the Page Object Model (POM) design pattern.
 
