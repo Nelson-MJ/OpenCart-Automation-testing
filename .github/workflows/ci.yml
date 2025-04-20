@@ -24,11 +24,10 @@ jobs:
       - name: 🧪 Run Maven Tests
         run: mvn clean test
 
-      - name: 📤 Upload ExtentReports
-        if: always()
-        uses: actions/upload-artifact@v3
+      - name: Upload Test Reports
+        uses: actions/upload-artifact@v3.1.2
         with:
-          name: ExtentReports
+          name: extent-reports
           path: test-output/
 
       - name: 📤 Upload Screenshots
