@@ -20,7 +20,7 @@ public class PageRegister extends AbstractComponents {
     By phone = By.name("telephone");
     By passWord = By.name("password");
     By confirmPass = By.name("confirm");
-    By radioBtn = By.xpath("//label[text()='Yes']");
+    By radioBtn = By.name("newsletter");
     By termsAgree = By.name("agree");
     By continueBtn = By.cssSelector("input.btn.btn-primary");
 
@@ -81,6 +81,9 @@ public class PageRegister extends AbstractComponents {
     public void continueBtn(){
         waitForElementVisible(continueBtn);
         click(continueBtn);
+        takeScreenshot("Registration Successful");
     }
+
+
 
 }

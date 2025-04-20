@@ -15,6 +15,8 @@ public class LoginPage extends AbstractComponents {
     By loginClick = By.xpath("//a[text()='Login']");
     By email = By.name("email");
     By password = By.name("password");
+    By loginBtn = By.cssSelector("input.btn.btn-primary");
+    By logoutClick = By.xpath("//a[text()='Logout']");
 
 
     public void open(){
@@ -40,18 +42,15 @@ public class LoginPage extends AbstractComponents {
         sendText(password,pass);
     }
 
+    public void login(){
+        waitForElementVisible(loginBtn);
+        click(loginBtn);
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
+    public void logout(){
+        waitForElementVisible(logoutClick);
+        click(logoutClick);
+        takeScreenshot("Logged In");
+    }
 
 }
